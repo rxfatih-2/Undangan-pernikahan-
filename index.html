@@ -17,17 +17,27 @@
 <body>
 
 <!-- ============================================
-     OVERLAY PEMBUKA
+     OVERLAY PEMBUKA (VIDEO COVER)
      ============================================ -->
-<div class="overlay-pembuka" id="overlayPembuka">
-  <div class="overlay-konten">
+<div class="overlay-pembuka" id="overlayPembuka" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; z-index: 9999;">
+  
+  <!-- Background Video Cover -->
+  <video autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; z-index: -2;">
+    <source src="Assets/VIC.mp4" type="video/mp4">
+  </video>
+  
+  <!-- Overlay Gelap -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: -1;"></div>
+
+  <!-- Konten Cover -->
+  <div class="overlay-konten" style="position: relative; z-index: 1; color: white;">
     <p class="overlay-aksara">ꦱꦼꦫꦠ꧀ꦲꦸꦊꦩ꧀</p>
-    <h1 class="overlay-nama">Andi & Sarah</h1>
+    <h1 class="overlay-nama" style="color: #fff;">Andi & Sarah</h1>
     <p class="overlay-tanggal">15 . 10 . 2026</p>
-    <div class="overlay-pemisah">❁ ꧁꧂ ❁</div>
+    <div class="overlay-pemisah" style="color: #C9A227;">❁ ꧁꧂ ❁</div>
     <p class="overlay-kepada">Katur dhumateng:</p>
-    <p class="overlay-tamu">Tamu Undangan</p>
-    <button class="overlay-tombol" id="bukaUndangan" type="button">
+    <p class="overlay-tamu" style="color: #C9A227;">Tamu Undangan</p>
+    <button class="overlay-tombol" id="bukaUndangan" type="button" style="background-color: #C9A227; color: white; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px; margin-top: 15px;">
       ꦧꦸꦏꦏ꧀ ꦈꦤ꧀ꦢꦁꦔꦤ꧀
     </button>
   </div>
@@ -48,7 +58,7 @@
   <span>☝</span>
 </button>
 
-<!-- Audio Backsound (JANGAN DIUBAH) -->
+<!-- Audio Backsound (TETAP SAMA) -->
 <audio id="backsound" loop preload="auto">
   <source src="Assets/beauty and the beat.mp3" type="audio/mpeg">
 </audio>
@@ -136,7 +146,7 @@
       <div class="ornamen-kartu">꧁ꦥꦸꦠꦿ꧂</div>
       <div class="frame-foto-bulat">
         <div class="lingkaran-ukir"></div>
-        <img src="Assets/FOTO-PRIA.jpg" alt="Andi Susanto">
+        <img src="Assets/FOTO-PRIA.jpg" alt="Andi Susanto" style="max-width: 100%; height: auto; object-fit: contain;">
       </div>
       <p class="gelar-jawa">ꦄꦤ꧀ꦢꦶ</p>
       <h3 class="nama-pengantin">Andi Susanto, S.T.</h3>
@@ -154,7 +164,7 @@
     <div class="tengah-pasangan">
       <div class="gunungan-tengah">
         <svg viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5 L70 50 L80 100 L75 170 L25 170 L20 100 L30 50 Z"afill="#C9A227" stroke="#4A2C0A" stroke-width="2"/>
+          <path d="M50 5 L70 50 L80 100 L75 170 L25 170 L20 100 L30 50 Z" fill="#C9A227" stroke="#4A2C0A" stroke-width="2"/>
           <path d="M50 30 L62 70 L68 110 L65 160 L35 160 L32 110 L38 70 Z" fill="#F5E6C8" stroke="#4A2C0A" stroke-width="1.5"/>
           <circle cx="50" cy="80" r="8" fill="#8B4513"/>
           <path d="M40 110 Q50 125 60 110" stroke="#4A2C0A" stroke-width="2" fill="none"/>
@@ -169,7 +179,7 @@
       <div class="ornamen-kartu">꧁ꦥꦸꦠꦿꦶ꧂</div>
       <div class="frame-foto-bulat">
         <div class="lingkaran-ukir"></div>
-        <img src="Assets/FOTO-WANITA.jpg" alt="Sarah Widiarti">
+        <img src="Assets/FOTO-WANITA.jpg" alt="Sarah Widiarti" style="max-width: 100%; height: auto; object-fit: contain;">
       </div>
       <p class="gelar-jawa">ꦱꦫꦃ</p>
       <h3 class="nama-pengantin">Sarah Widiarti, S.Pd.</h3>
@@ -348,85 +358,93 @@
       <a href="https://maps.google.com" target="_blank" rel="noopener" class="tombol-lokasi">ꦢꦭꦤ꧀ ꦥꦺꦠ</a>
     </div>
   </div>
-</section>
-
-<!-- ============================================
-     6. GALERI
+                                           </section>
+     <!-- ============================================
+     6. GALERI (TOMBOL MEMBUKA POPUP MODAL)
      ============================================ -->
 <section class="galeri-jawa">
   <div class="judul-galeri">
-    <p class="aksara-galeri">ꦩꦺꦴꦩꦺꦤ꧀ꦧꦲꦒꦶꦪ</p>
+    <p class="aksara-galeri">ꦩꦺꦴꦩꦺꦴꦤ꧀ꦧꦲꦒꦶꦪ</p>
     <h2 class="judul-utama-galeri">Momen Bahagia</h2>
     <p class="sub-galeri">Reroncen crita asmara ingkang kebak berkah</p>
     <div class="pemisah-galeri">❁ ꧁꧂ ❁</div>
   </div>
 
-  <div class="grid-foto">
-    <div class="frame-foto">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <img src="Assets/FOTO1.jpg" alt="Momen 1">
-      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧑꧇</p>
-    </div>
-
-    <div class="frame-foto">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <img src="Assets/FOTO2.jpg" alt="Momen 2">
-      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧒꧇</p>
-    </div>
-
-    <div class="frame-foto">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <img src="Assets/FOTO3.jpg" alt="Momen 3">
-      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧓꧇</p>
-    </div>
-
-    <div class="frame-foto">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <img src="Assets/FOTO4.jpg" alt="Momen 4">
-      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧔꧇</p>
-    </div>
-  </div>
-
-  <div class="pemisah-video">
-    <span>❁</span> <span class="teks-pemisah">ꦥ꦳ꦶꦢꦺꦪꦺꦴ</span> <span>❁</span>
-  </div>
-
-  <div class="grid-video">
-    <div class="frame-video">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <video controls poster="POSTER1.jpg">
-        <source src="Assets/VIDEO1.mp4" type="video/mp4">
-      </video>
-      <p class="caption-video">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧑꧇</p>
-    </div>
-
-    <div class="frame-video">
-      <div class="sudut sudut-tl"></div>
-      <div class="sudut sudut-tr"></div>
-      <div class="sudut sudut-bl"></div>
-      <div class="sudut sudut-br"></div>
-      <video controls poster="POSTER2.jpg">
-        <source src="Assets/VIDEO2.mp4" type="video/mp4">
-      </video>
-      <p class="caption-video">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧒꧇</p>
-    </div>
+  <div style="text-align: center; margin-top: 25px;">
+    <button type="button" onclick="document.getElementById('modalGaleri').style.display='block'" style="padding: 12px 28px; background-color: #C9A227; color: white; font-size: 16px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+      Lihat Galeri Kenangan
+    </button>
   </div>
 </section>
+
+<!-- ============================================
+     MODAL POPUP GALERI
+     ============================================ -->
+<div id="modalGaleri" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 10000; overflow-y: auto; padding: 40px 15px; box-sizing: border-box;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center; color: white;">
+    
+    <p style="color: #C9A227; font-size: 18px; margin-bottom: 5px;">ꦩꦺꦴꦩꦺꦤ꧀ꦧꦲꦒꦶꦪ</p>
+    <h2 style="color: #C9A227; margin-top: 0;">Galeri Kenangan</h2>
+    <div style="color: #C9A227; margin-bottom: 25px;">❁ ꧁꧂ ❁</div>
+
+    <!-- Foto-foto Kenangan -->
+    <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+      
+      <div style="width: 100%; text-align: center;">
+        <img src="Assets/FOTO1.jpg" alt="Momen 1" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧑꧇</p>
+      </div>
+
+      <div style="width: 100%; text-align: center;">
+        <img src="Assets/FOTO2.jpg" alt="Momen 2" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧒꧇</p>
+      </div>
+
+      <div style="width: 100%; text-align: center;">
+        <img src="Assets/FOTO3.jpg" alt="Momen 3" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧓꧇</p>
+      </div>
+
+      <div style="width: 100%; text-align: center;">
+        <img src="Assets/FOTO4.jpg" alt="Momen 4" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧔꧇</p>
+      </div>
+
+    </div>
+
+    <!-- Pemisah Video -->
+    <div style="margin: 30px 0; color: #C9A227; font-size: 18px;">
+      <span>❁</span> <span>ꦥ꦳ꦶꦢꦺꦪꦺꦴ</span> <span>❁</span>
+    </div>
+
+    <!-- Video-video Kenangan -->
+    <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+      
+      <div style="width: 100%; text-align: center;">
+        <video controls poster="POSTER1.jpg" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+          <source src="Assets/VIDEO1.mp4" type="video/mp4">
+        </video>
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧑꧇</p>
+      </div>
+
+      <div style="width: 100%; text-align: center;">
+        <video controls poster="POSTER2.jpg" style="max-width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 2px solid #C9A227;">
+          <source src="Assets/VIDEO2.mp4" type="video/mp4">
+        </video>
+        <p style="color: #F5E6C8; margin-top: 5px;">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧒꧇</p>
+      </div>
+
+    </div>
+
+    <!-- Tombol Tutup Galeri -->
+    <div style="margin-top: 30px; margin-bottom: 20px;">
+      <button type="button" onclick="document.getElementById('modalGaleri').style.display='none'" style="padding: 12px 30px; background-color: #C9A227; color: white; font-size: 16px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer;">
+        Tutup Galeri
+      </button>
+    </div>
+
+  </div>
+</div>
 
 <!-- ============================================
      7. RSVP / UCAPAN & DOA
@@ -612,4 +630,5 @@
 <script src="script.js"></script>
 
 </body>
-                                                          </html>
+     </html>
+
