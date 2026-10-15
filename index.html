@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="jv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serat Ulem Kasmaran • Andi & Sarah</title>
+<meta name="description" content="Undangan Pernikahan Adat Jawa - Andi & Sarah">
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Javanese:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- CSS Eksternal -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     OVERLAY PEMBUKA
+     ============================================ -->
+<div class="overlay-pembuka" id="overlayPembuka">
+  <div class="overlay-konten">
+    <p class="overlay-aksara">ꦱꦼꦫꦠ꧀ꦲꦸꦊꦩ꧀</p>
+    <h1 class="overlay-nama">Andi & Sarah</h1>
+    <p class="overlay-tanggal">15 . 10 . 2026</p>
+    <div class="overlay-pemisah">❁ ꧁꧂ ❁</div>
+    <p class="overlay-kepada">Katur dhumateng:</p>
+    <p class="overlay-tamu">Tamu Undangan</p>
+    <button class="overlay-tombol" id="bukaUndangan" type="button">
+      ꦧꦸꦏꦏ꧀ ꦈꦤ꧀ꦢꦁꦔꦤ꧀
+    </button>
+  </div>
+</div>
+
+<!-- ============================================
+     TOMBOL MUSIK (GONG)
+     ============================================ -->
+<div class="tombol-musik-jawa">
+  <button id="toggleMusik" class="gong" type="button" aria-label="Kontrol Musik">
+    <span class="ikon-gong">🥁</span>
+  </button>
+  <p class="label-musik">ꦒꦩꦺꦭꦤ꧀</p>
+</div>
+
+<!-- Tombol Ke Atas -->
+<button class="ke-atas" id="keAtas" type="button" aria-label="Ke Atas">
+  <span>☝</span>
+</button>
+
+<!-- Audio Backsound (JANGAN DIUBAH) -->
+<audio id="backsound" loop preload="auto">
+  <source src="Assets/beauty and the beat.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============================================
+     1. HERO SERAT
+     ============================================ -->
+<section class="hero-serat">
+  <div class="ornamen-atas">
+    <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60 Q50 20 100 50 Q150 10 200 45 Q250 5 300 50 Q350 20 400 60" 
+            fill="none" stroke="#C9A227" stroke-width="2"/>
+      <circle cx="200" cy="45" r="6" fill="#C9A227"/>
+      <circle cx="100" cy="50" r="4" fill="#C9A227"/>
+      <circle cx="300" cy="50" r="4" fill="#C9A227"/>
+    </svg>
+  </div>
+
+  <div class="hero-box">
+    <p class="label-serat">ꦱꦼꦫꦠ꧀ꦲꦸꦊꦩ꧀</p>
+    <p class="label-latin">SERAT ULEM KASMARAN</p>
+
+    <div class="pemisah-hero">❁ ꧁꧂ ❁</div>
+
+    <div class="pasangan-hero">
+      <h1 class="nama-utama">Andi</h1>
+      <p class="aksara-nama-hero">ꦄꦤ꧀ꦢꦶ</p>
+      <p class="dan">lan</p>
+      <h1 class="nama-utama">Sarah</h1>
+      <p class="aksara-nama-hero">ꦱꦫꦃ</p>
+    </div>
+
+    <div class="gunungan-kecil">
+      <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5 L70 50 L80 90 L75 140 L25 140 L20 90 L30 50 Z" fill="#C9A227" stroke="#4A2C0A" stroke-width="2"/>
+        <path d="M50 25 L60 60 L65 90 L62 130 L38 130 L35 90 L40 60 Z" fill="#F5E6C8" stroke="#4A2C0A" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <div class="tanggal-hero">
+      <p class="hari">ꦄꦏꦢ꧀ ꦤꦶꦏꦃ</p>
+      <p class="tanggal-besar">15 . 10 . 2026</p>
+      <p class="pasaran">Senin Pahing • Wuku Sungsang</p>
+    </div>
+
+    <div class="katur-box">
+      <p class="katur-label">Katur dhumateng Bapak/Ibu/Saudara/i:</p>
+      <h3 class="nama-tamu">Tamu Undangan</h3>
+    </div>
+  </div>
+
+  <div class="basmalah-box">
+    <p class="arab-hero">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="jawa-arab">ꦧꦱ꧀ꦩꦭ꧀ꦭꦃꦫꦃꦩꦤ꧀ꦫꦲꦶꦩ꧀</p>
+    <p class="doa-jawa">
+      <em>"Mugi-mugi Gusti Allah tansah tinuntun ing keslametan,<br>
+      kabagaswaran, dhumateng kita sedaya."</em>
+    </p>
+  </div>
+
+  <div class="scroll-jawa">
+    <span>ꦠꦸꦫꦸꦤ꧀</span>
+    <div class="panah">⌄</div>
+  </div>
+</section>
+
+<!-- ============================================
+     2. MEMPELAI
+     ============================================ -->
+<section class="mempelai-jawa">
+  <div class="judul-mempelai">
+    <p class="aksara-mempelai">ꦩꦺꦩ꧀ꦥꦺꦭꦻ</p>
+    <h2 class="judul-utama-mempelai">Mempelai</h2>
+    <div class="pemisah-mempelai">❁ ꧁꧂ ❁</div>
+    <p class="pengantar-mempelai">
+      <em>Kanthi panyuwun saha linambaran sih wilasaning<br>
+      Gusti Ingkang Maha Agung, kami bermaksud<br>
+      menyelenggarakan syukuran pernikahan putra-putri kami:</em>
+    </p>
+  </div>
+
+  <div class="kartu-pasangan">
+    <!-- Putra -->
+    <div class="kartu-pengantin putra">
+      <div class="ornamen-kartu">꧁ꦥꦸꦠꦿ꧂</div>
+      <div class="frame-foto-bulat">
+        <div class="lingkaran-ukir"></div>
+        <img src="Assets/FOTO-PRIA.jpg" alt="Andi Susanto">
+      </div>
+      <p class="gelar-jawa">ꦄꦤ꧀ꦢꦶ</p>
+      <h3 class="nama-pengantin">Andi Susanto, S.T.</h3>
+      <p class="aksara-pengantin">ꦄꦤ꧀ꦢꦶ ꦱꦸꦱꦤ꧀ꦠꦺꦴ</p>
+      <div class="garis-pemisah">✧ ❁ ✧</div>
+      <p class="keterangan-jawa">Putra kapisan saking</p>
+      <p class="nama-orangtua">
+        Bapak Shofiudin<br>
+        <span class="dan-orangtua">&</span><br>
+        Ibu Siti
+      </p>
+    </div>
+
+    <!-- Tengah -->
+    <div class="tengah-pasangan">
+      <div class="gunungan-tengah">
+        <svg viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L70 50 L80 100 L75 170 L25 170 L20 100 L30 50 Z"afill="#C9A227" stroke="#4A2C0A" stroke-width="2"/>
+          <path d="M50 30 L62 70 L68 110 L65 160 L35 160 L32 110 L38 70 Z" fill="#F5E6C8" stroke="#4A2C0A" stroke-width="1.5"/>
+          <circle cx="50" cy="80" r="8" fill="#8B4513"/>
+          <path d="M40 110 Q50 125 60 110" stroke="#4A2C0A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <p class="aksara-dan">ꦭꦤ꧀</p>
+      <p class="dan-latin">lan</p>
+    </div>
+
+    <!-- Putri -->
+    <div class="kartu-pengantin putri">
+      <div class="ornamen-kartu">꧁ꦥꦸꦠꦿꦶ꧂</div>
+      <div class="frame-foto-bulat">
+        <div class="lingkaran-ukir"></div>
+        <img src="Assets/FOTO-WANITA.jpg" alt="Sarah Widiarti">
+      </div>
+      <p class="gelar-jawa">ꦱꦫꦃ</p>
+      <h3 class="nama-pengantin">Sarah Widiarti, S.Pd.</h3>
+      <p class="aksara-pengantin">ꦱꦫꦃ ꦮꦶꦢꦶꦪꦂꦠꦶ</p>
+      <div class="garis-pemisah">✧ ❁ ✧</div>
+      <p class="keterangan-jawa">Putri kapindho saking</p>
+      <p class="nama-orangtua">
+        Bapak Muchibin<br>
+        <span class="dan-orangtua">&</span><br>
+        Ibu Chabibah
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     3. KISAH KAMI
+     ============================================ -->
+<section class="kisah-jawa">
+  <div class="judul-kisah">
+    <p class="aksara-kisah">ꦏꦶꦱꦃꦏꦩꦶ</p>
+    <h2 class="judul-utama-kisah">Kisah Kami</h2>
+    <div class="pemisah-kisah">❁ ꧁꧂ ❁</div>
+    <p class="sub-kisah"><em>Reroncen crita asmara ingkang kebak berkah.</em></p>
+  </div>
+
+  <div class="timeline-jawa">
+    <div class="garis-timeline"></div>
+
+    <div class="momen kiri">
+      <div class="titik-momen">❁</div>
+      <div class="kartu-momen">
+        <div class="header-momen">
+          <p class="tahun-jawa">꧇꧒꧐꧑꧘꧇</p>
+          <p class="tahun-latin">2018</p>
+        </div>
+        <h3 class="judul-momen">ꦥꦼꦂꦠꦼꦩꦸꦮꦤ꧀ꦥꦶꦱꦤ꧀</h3>
+        <p class="judul-momen-latin">Pertemuan Pisanan</p>
+        <p class="cerita-momen">Pepanggihan ingkang sepisan wonten ing pawiyatan, nalika sami-sami ngangsu kawruh. Tanpa dipun jarag, Gusti paring dalan kangge patemon kita.</p>
+      </div>
+    </div>
+
+    <div class="momen kanan">
+      <div class="titik-momen">❁</div>
+      <div class="kartu-momen">
+        <div class="header-momen">
+          <p class="tahun-jawa">꧇꧒꧐꧒꧐꧇</p>
+          <p class="tahun-latin">2020</p>
+        </div>
+        <h3 class="judul-momen">ꦏꦏꦺꦏꦠꦼꦤ꧀ꦧꦠꦺꦴꦱ꧀</h3>
+        <p class="judul-momen-latin">Kekancan Batos</p>
+        <p class="cerita-momen">Saking kekancan ingkang prasaja, saya dangu saya tuwuh raos katresnan. Saben dinten dados crita ingkang kebak makna.</p>
+      </div>
+    </div>
+
+    <div class="momen kiri">
+      <div class="titik-momen">❁</div>
+      <div class="kartu-momen">
+        <div class="header-momen">
+          <p class="tahun-jawa">꧇꧒꧐꧒꧓꧇</p>
+          <p class="tahun-latin">2023</p>
+        </div>
+        <h3 class="judul-momen">ꦭꦩꦂꦫꦤ꧀</h3>
+        <p class="judul-momen-latin">Lamaran</p>
+        <p class="cerita-momen">Kanthi restu saking tiyang sepuh kekalih, kula ngaturaken lamaran dhumateng panjenengan. Mugi Gusti tansah ngijabahi.</p>
+      </div>
+    </div>
+
+    <div class="momen kanan">
+      <div class="titik-momen">❁</div>
+      <div class="kartu-momen">
+        <div class="header-momen">
+          <p class="tahun-jawa">꧇꧒꧐꧒꧖꧇</p>
+          <p class="tahun-latin">2026</p>
+        </div>
+        <h3 class="judul-momen">ꦄꦏꦢ꧀ꦤꦶꦏꦃ</h3>
+        <p class="judul-momen-latin">Akad Nikah</p>
+        <p class="cerita-momen">Dinten ingkang dipun tunggu-tunggu, nalika kita ikrar janji suci wonten ing ngarsaning Gusti. Mugi dados kulawarga ingkang sakinah, mawaddah, warahmah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     4. KUTIPAN
+     ============================================ -->
+<section class="kutipan-jawa">
+  <div class="kutipan-box">
+    <p class="aksara-kutipan">ꦏꦸꦠꦶꦥꦤ꧀</p>
+    <p class="kutipan-utama">
+      <em>"Katresnan iku ora mung rong tembung,<br>
+      nanging laku lan pangorbanan<br>
+      ingkang tulus lan lestari."</em>
+    </p>
+    <p class="kutipan-arti">(Cinta bukan sekadar dua kata, melainkan perbuatan dan pengorbanan yang tulus dan abadi.)</p>
+    <div class="pemisah-kutipan">❁ ꧁꧂ ❁</div>
+  </div>
+</section>
+
+<!-- ============================================
+     5. ACARA
+     ============================================ -->
+<section class="acara-jawa">
+  <div class="judul-acara">
+    <p class="aksara-acara">ꦄꦕꦫ</p>
+    <h2 class="judul-utama-acara">Rangkaian Acara</h2>
+    <div class="pemisah-acara">❁ ꧁꧂ ❁</div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-box" id="countdown">
+    <p class="cd-label">ꦏꦤ꧀ꦠꦶ ꦢꦶꦤ꧀ꦠꦼꦤ꧀ ꦄꦏꦢ꧀</p>
+    <p class="cd-sublabel">Menuju Hari Bahagia</p>
+    <div class="cd-grid">
+      <div class="cd-item">
+        <span class="cd-angka" id="cd-hari">00</span>
+        <span class="cd-teks">ꦢꦶꦤ꧀ꦠꦼꦤ꧀</span>
+      </div>
+      <div class="cd-item">
+        <span class="cd-angka" id="cd-jam">00</span>
+        <span class="cd-teks">ꦗꦩ꧀</span>
+      </div>
+      <div class="cd-item">
+        <span class="cd-angka" id="cd-menit">00</span>
+        <span class="cd-teks">ꦩꦺꦤꦶꦠ꧀</span>
+      </div>
+      <div class="cd-item">
+        <span class="cd-angka" id="cd-detik">00</span>
+        <span class="cd-teks">ꦢꦺꦠꦶꦏ꧀</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-acara">
+    <!-- Akad Nikah -->
+    <div class="kartu-acara">
+      <div class="ikon-acara">💍</div>
+      <p class="nama-acara">ꦄꦏꦢ꧀ ꦤꦶꦏꦃ</p>
+      <h3 class="nama-acara-latin">Akad Nikah</h3>
+      <div class="garis-acara">✧ ❁ ✧</div>
+      <p class="info-acara">
+        <span class="label">Dinten</span>
+        <strong>Senin Pahing</strong><br>
+        <span class="label">Tanggal</span>
+        <strong>15 Oktober 2026</strong><br>
+        <span class="label">Wanci</span>
+        <strong>08.00 - 10.00 WIB</strong>
+      </p>
+      <div class="lokasi-acara">
+        <p>ꦥꦁꦒꦺꦤ꧀ꦤꦤ꧀</p>
+        <p><strong>Masjid Agung Al-Akbar</strong><br>
+        Jl. Sukolilo, Surabaya</p>
+      </div>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="tombol-lokasi">ꦢꦭꦤ꧀ ꦥꦺꦠ</a>
+    </div>
+
+    <!-- Resepsi -->
+    <div class="kartu-acara">
+      <div class="ikon-acara">🎊</div>
+      <p class="nama-acara">ꦫꦺꦱꦺꦥ꧀ꦱꦶ</p>
+      <h3 class="nama-acara-latin">Resepsi</h3>
+      <div class="garis-acara">✧ ❁ ✧</div>
+      <p class="info-acara">
+        <span class="label">Dinten</span>
+        <strong>Senin Pahing</strong><br>
+        <span class="label">Tanggal</span>
+        <strong>15 Oktober 2026</strong><br>
+        <span class="label">Wanci</span>
+        <strong>11.00 - 14.00 WIB</strong>
+      </p>
+      <div class="lokasi-acara">
+        <p>ꦥꦁꦒꦺꦤ꧀ꦤꦤ꧀</p>
+        <p><strong>Gedung Graha Wisata</strong><br>
+        Jl. Raya Darmo No. 12, Surabaya</p>
+      </div>
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="tombol-lokasi">ꦢꦭꦤ꧀ ꦥꦺꦠ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     6. GALERI
+     ============================================ -->
+<section class="galeri-jawa">
+  <div class="judul-galeri">
+    <p class="aksara-galeri">ꦩꦺꦴꦩꦺꦤ꧀ꦧꦲꦒꦶꦪ</p>
+    <h2 class="judul-utama-galeri">Momen Bahagia</h2>
+    <p class="sub-galeri">Reroncen crita asmara ingkang kebak berkah</p>
+    <div class="pemisah-galeri">❁ ꧁꧂ ❁</div>
+  </div>
+
+  <div class="grid-foto">
+    <div class="frame-foto">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <img src="Assets/FOTO1.jpg" alt="Momen 1">
+      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧑꧇</p>
+    </div>
+
+    <div class="frame-foto">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <img src="Assets/FOTO2.jpg" alt="Momen 2">
+      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧒꧇</p>
+    </div>
+
+    <div class="frame-foto">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <img src="Assets/FOTO3.jpg" alt="Momen 3">
+      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧓꧇</p>
+    </div>
+
+    <div class="frame-foto">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <img src="Assets/FOTO4.jpg" alt="Momen 4">
+      <p class="caption-foto">ꦩꦺꦴꦩꦺꦤ꧀ ꧇꧔꧇</p>
+    </div>
+  </div>
+
+  <div class="pemisah-video">
+    <span>❁</span> <span class="teks-pemisah">ꦥ꦳ꦶꦢꦺꦪꦺꦴ</span> <span>❁</span>
+  </div>
+
+  <div class="grid-video">
+    <div class="frame-video">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <video controls poster="POSTER1.jpg">
+        <source src="Assets/VIDEO1.mp4" type="video/mp4">
+      </video>
+      <p class="caption-video">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧑꧇</p>
+    </div>
+
+    <div class="frame-video">
+      <div class="sudut sudut-tl"></div>
+      <div class="sudut sudut-tr"></div>
+      <div class="sudut sudut-bl"></div>
+      <div class="sudut sudut-br"></div>
+      <video controls poster="POSTER2.jpg">
+        <source src="Assets/VIDEO2.mp4" type="video/mp4">
+      </video>
+      <p class="caption-video">ꦥ꦳ꦶꦢꦺꦪꦺꦴ ꧇꧒꧇</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     7. RSVP / UCAPAN & DOA
+     ============================================ -->
+<section class="rsvp-jawa">
+  <div class="judul-rsvp">
+    <p class="aksara-rsvp">ꦈꦕꦥꦤ꧀ꦭꦤ꧀ꦢꦺꦴꦔ</p>
+    <h2 class="judul-utama-rsvp">Ucapan & Doa</h2>
+    <div class="pemisah-rsvp">❁ ꧁꧂ ❁</div>
+  </div>
+
+  <form class="form-rsvp" id="formUcapan">
+    <div class="form-group">
+      <label for="nama">ꦤꦩ</label>
+      <input type="text" id="nama" placeholder="Nama panjenengan..." required>
+    </div>
+
+    <div class="form-group">
+      <label for="kehadiran">ꦏꦲꦢꦶꦫꦤ꧀</label>
+      <select id="kehadiran" required>
+        <option value="">-- Pilih --</option>
+        <option value="hadir">ꦫꦮꦸꦃ (Hadir)</option>
+        <option value="tidak">ꦩ꧀ꦧꦺꦴꦠꦼꦤ꧀ꦫꦮꦸꦃ (Tidak Hadir)</option>
+        <option value="ragu">ꦩꦱꦶꦃꦫꦒꦸ (Masih Ragu)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pesan">ꦥꦺꦱꦺꦤ꧀</label>
+      <textarea id="pesan" placeholder="Ucapan lan donga panjenengan..." required></textarea>
+    </div>
+
+    <button type="submit" class="tombol-kirim">ꦏꦶꦫꦶꦩ꧀ ꦈꦕꦥꦤ꧀</button>
+  </form>
+
+  <div class="daftar-ucapan" id="daftarUcapan">
+    <div class="ucapan-item">
+      <p class="ucapan-nama">ꦧꦸꦢꦶ</p>
+      <p class="ucapan-pesan">"Sugeng manten, mugi dados kulawarga ingkang sakinah, mawaddah, warahmah. Barakallahu lakuma."</p>
+    </div>
+    <div class="ucapan-item">
+      <p class="ucapan-nama">ꦱꦶꦠꦶ</p>
+      <p class="ucapan-pesan">"Mugi Gusti tansah paring berkah lan katresnan ingkang lestari dhumateng kekalih."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     8. HADIAH / AMPLOP DIGITAL
+     ============================================ -->
+<section class="hadiah-jawa">
+  <div class="judul-hadiah">
+    <p class="aksara-hadiah">ꦏꦝꦺꦴ</p>
+    <h2 class="judul-utama-hadiah">Tanda Asih</h2>
+    <div class="pemisah-hadiah">❁ ꧁꧂ ❁</div>
+  </div>
+
+  <p class="pengantar-hadiah">
+    <em>Tanpa ngurangi rasa hormat, menawi panjenengan badhe paring tanda asih,<br>
+    saget lumantar rekening ing ngandhap punika.</em>
+  </p>
+
+  <div class="grid-hadiah">
+    <!-- Rekening 1 -->
+    <div class="kartu-hadiah">
+      <div class="logo-bank">🏦</div>
+      <p class="nama-bank">ꦧꦤ꧀ꦏ꧀ ꦗꦠꦼꦁ</p>
+      <h3 class="jenis-bank">Bank BCA</h3>
+      <div class="nomor-rekening" id="rek1">1234567890</div>
+      <p class="nama-pemilik">a.n. Andi Susanto</p>
+      <button class="tombol-salin" type="button"
+              data-target="rek1" 
+              data-nomor="1234567890">
+        ꦱꦭꦶꦤ꧀
+      </button>
+    </div>
+
+    <!-- Rekening 2 -->
+    <div class="kartu-hadiah">
+      <div class="logo-bank">🏦</div>
+      <p class="nama-bank">ꦧꦤ꧀ꦏ꧀ ꦗꦠꦼꦁ</p>
+      <h3 class="jenis-bank">Bank Mandiri</h3>
+      <div class="nomor-rekening" id="rek2">0987654321</div>
+      <p class="nama-pemilik">a.n. Sarah Widiarti</p>
+      <button class="tombol-salin" type="button"
+              data-target="rek2" 
+              data-nomor="0987654321">
+        ꦱꦭꦶꦤ꧀
+      </button>
+    </div>
+  </div>
+
+  <div class="alamat-kado">
+    <p class="label-alamat">ꦄꦭꦩꦠ꧀ ꦏꦶꦫꦶꦩ꧀ ꦏꦝꦺꦴ</p>
+    <p><strong>Kediaman Andi & Sarah</strong><br>
+    Jl. Raya Darmo No. 45, RT 02 RW 05<br>
+    Surabaya, Jawa Timur 60241<br>
+    Telp/WA: 0812-3456-7890</p>
+  </div>
+</section>
+
+<!-- ============================================
+     9. PENUTUP
+     ============================================ -->
+<section class="panutup-serat">
+  <div class="gunungan">
+    <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="emasGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#C9A227"/>
+          <stop offset="100%" style="stop-color:#8B6914"/>
+        </linearGradient>
+      </defs>
+      <path d="M100 10 L140 100 L160 180 L150 280 L50 280 L40 180 L60 100 Z" fill="url(#emasGrad)" stroke="#4A2C0A" stroke-width="3"/>
+      <path d="M100 40 L120 110 L130 180 L125 270 L75 270 L70 180 L80 110 Z" fill="#F5E6C8" stroke="#4A2C0A" stroke-width="2"/>
+      <circle cx="100" cy="120" r="15" fill="#8B4513"/>
+      <path d="M85 160 Q100 180 115 160" stroke="#4A2C0A" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="panutup-box">
+    <p class="pambuka-panutup">ꦥꦩ꧀ꦧꦸꦏꦥꦤꦸꦠꦸꦥ꧀</p>
+    <h2 class="judul-panutup">Matur Nuwun</h2>
+    <p class="sub-panutup">ꦩꦠꦸꦂꦤꦸꦮꦸꦤ꧀</p>
+
+    <div class="ornamen-pemisah"><span>❁</span> <span>꧁꧂</span> <span>❁</span></div>
+
+    <div class="ucapan-jawa">
+      <p class="krama">
+        <em>"Saking agengipun panuwun saha pangestu,<br>
+        kula minangka tiyang ingkang badhe ngayahi jejibahan,<br>
+        nyuwun pangapunten menawi wonten kalepatan<br>
+        saha kekiranganing atur."</em>
+      </p>
+      <p class="terjemahan">
+        (Dari besarnya terima kasih dan restu, saya sebagai orang yang akan melaksanakan hajat, memohon maaf jika ada kesalahan dan kekurangan dalam bertutur.)
+      </p>
+    </div>
+
+    <div class="ornamen-pemisah"><span>✦</span> <span>ꦆ</span> <span>✦</span></div>
+
+    <div class="doa-panutup">
+      <p class="arab">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+      <p class="doa-arti">
+        "Mugi-mugi Gusti Allah tansah paring berkah,<br>
+        rahmat, saha katresnan ingkang lestari<br>
+        dhumateng panjenengan sedaya."
+      </p>
+    </div>
+
+    <div class="ornamen-pemisah"><span>❁</span> <span>꧁꧂</span> <span>❁</span></div>
+
+    <div class="tanda-tangan">
+      <p class="salam-penutup">Sugeng rawuh, sugeng tindak,<br>sugeng manggih kabagyan.</p>
+      <p class="ingkang-ngatur">Ingkang ngatur sedaya acara,</p>
+      <h3 class="nama-pengirim">Andi & Sarah</h3>
+      <p class="aksara-nama">ꦄꦤ꧀ꦢꦶ ꦭꦤ꧀ ꦱꦫꦃ</p>
+    </div>
+
+    <div class="tanggal-jawa">
+      <p>ꦏꦥꦶꦁꦏꦭꦶꦃꦮꦺꦴꦭꦸꦁꦢꦶꦤ</p>
+      <p class="tanggal-latin">Dinten: Senin Pahing, 15 Oktober 2026</p>
+      <p class="wuku">Wuku: Sungsang • Windu: Kuningan</p>
+    </div>
+  </div>
+
+  <!-- Tombol Share -->
+  <div class="share-box">
+    <button class="tombol-share" id="shareWA" type="button">
+      <span>📱</span> ꦧꦒꦶꦏꦺꦤ꧀ ꦩꦭꦸꦮꦶ ꦮ꦳ꦺꦄ
+    </button>
+  </div>
+
+  <div class="batik-bawah"></div>
+
+  <footer class="footer-jawa">
+    <p>ꦏꦥꦶꦁꦄꦏ꧀ꦱꦫꦗꦮ</p>
+    <p>© 2026 • Andi & Sarah • Dipun damel kanthi <span>❤</span> lan katresnan</p>
+  </footer>
+</section>
+
+<!-- JavaScript Eksternal -->
+<script src="script.js"></script>
+
+</body>
+                                                          </html>
