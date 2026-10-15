@@ -1,7 +1,7 @@
 /* ============================================
    UNDANGAN PERNIKAHAN ADAT JAWA
    File: script.js
-   Versi: 3.0 (Fix Overlay Pembuka)
+   Versi: 4.0 (Integrasi Video Cover & Modal Galeri)
    ============================================ */
 
 (function() {
@@ -32,7 +32,7 @@
   }
 
   /* ============================================
-     2. BUKA UNDANGAN (Overlay Pembuka)
+     2. BUKA UNDANGAN (Overlay Pembuka + Video Cover)
      ============================================ */
   function initBukaUndangan() {
     const btn = document.getElementById('bukaUndangan');
@@ -40,13 +40,11 @@
     const backsound = document.getElementById('backsound');
     const btnMusik = document.getElementById('toggleMusik');
 
-    // Kalau overlay tidak ada di HTML → pastikan scroll aktif
     if (!overlay) {
       document.body.style.overflow = 'auto';
       return;
     }
 
-    // Kalau tombol tidak ada → auto-buka setelah 1 detik
     if (!btn) {
       setTimeout(() => {
         overlay.classList.add('terbuka');
@@ -56,13 +54,11 @@
       return;
     }
 
-    // Lock scroll saat overlay aktif
+    // Kunci scroll saat overlay aktif
     document.body.style.overflow = 'hidden';
 
-    // Flag biar tidak double trigger
     let sudahBuka = false;
 
-    // Fungsi buka undangan
     function bukaUndangan() {
       if (sudahBuka) return;
       sudahBuka = true;
@@ -70,12 +66,11 @@
       // Animasi overlay keluar
       overlay.classList.add('terbuka');
 
-      // Play musik
+      // Putar musik
       if (backsound) {
         backsound.play().then(() => {
           if (btnMusik) btnMusik.classList.add('aktif');
         }).catch(() => {
-          // Autoplay ditolak browser — user harus klik tombol gong manual
           console.warn('⚠️ Autoplay ditolak browser, klik tombol gong untuk memutar musik.');
         });
       }
@@ -83,30 +78,30 @@
       // Aktifkan scroll
       document.body.style.overflow = 'auto';
 
-      // Sembunyikan overlay setelah animasi
+      // Sembunyikan overlay setelah animasi selasai
       setTimeout(() => {
         overlay.style.display = 'none';
       }, 700);
     }
 
-    // Trigger 1: Klik tombol
+    // Trigger 1: Klik tombol Buka Undangan
     btn.addEventListener('click', bukaUndangan);
 
-    // Trigger 2: Klik di area overlay (luar konten)
+    // Trigger 2: Klik di area overlay (luar kotak konten)
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) {
         bukaUndangan();
       }
     });
 
-    // Trigger 3: Tekan Escape
+    // Trigger 3: Tekan tombol Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !sudahBuka) {
         bukaUndangan();
       }
     });
 
-    // Trigger 4: FALLBACK — auto-buka setelah 15 detik (biar tidak stuck)
+    // Trigger 4: Fallback auto-buka setelah 15 detik
     setTimeout(() => {
       if (!sudahBuka) {
         console.warn('⚠️ Auto-buka undangan setelah 15 detik (fallback)');
@@ -116,7 +111,29 @@
   }
 
   /* ============================================
-     3. FORM UCAPAN & DOA
+     3. MODAL POPUP GALERI
+     ============================================ */
+  function initModalGaleri() {
+    const modal = document.getElementById('modalGaleri');
+    if (!modal) return;
+
+    // Tutup galeri jika area hitam di luar konten diklik
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Tutup galeri jika menekan tombol Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+      }
+    });
+  }
+
+  /* ============================================
+     4. FORM UCAPAN & DOA
      ============================================ */
   function initFormUcapan() {
     const form = document.getElementById('formUcapan');
@@ -165,7 +182,7 @@
   }
 
   /* ============================================
-     4. SALIN REKENING
+     5. SALIN REKENING
      ============================================ */
   function initSalinRekening() {
     document.querySelectorAll('.tombol-salin').forEach(btn => {
@@ -175,7 +192,6 @@
         
         if (!nomor) return;
 
-        // Simpan teks asli
         const el = document.getElementById(targetId);
 
         function suksesCopy() {
@@ -194,7 +210,6 @@
           }, 1800);
         }
 
-        // Modern API
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(nomor).then(suksesCopy).catch(() => {
             fallbackCopy(nomor, suksesCopy);
@@ -223,11 +238,12 @@
   }
 
   /* ============================================
-     5. SCROLL REVEAL
+     6. SCROLL REVEAL (EFEK MUNCUL SAAT SCROLL)
      ============================================ */
   function initScrollReveal() {
+    // Memilih elemen utama di luar modal galeri
     const elemen = document.querySelectorAll(
-      '.kartu-pengantin, .kartu-momen, .frame-foto, .frame-video, ' +
+      'section:not(.galeri-jawa) .kartu-pengantin, .kartu-momen, ' +
       '.kartu-acara, .kartu-hadiah, .form-rsvp, .kutipan-box, .daftar-ucapan, ' +
       '.alamat-kado, .panutup-box, .countdown-box'
     );
@@ -264,13 +280,12 @@
   }
 
   /* ============================================
-     6. COUNTDOWN
+     7. COUNTDOWN HITUNG MUNDUR
      ============================================ */
   function initCountdown() {
     const countdownEl = document.getElementById('countdown');
     if (!countdownEl) return;
 
-    // GANTI TANGGAL INI sesuai tanggal pernikahan Anda
     const tanggalNikah = new Date('2026-10-15T08:00:00').getTime();
 
     const hari = document.getElementById('cd-hari');
@@ -306,14 +321,14 @@
   }
 
   /* ============================================
-     7. TOMBOL KE ATAS
+     8. TOMBOL KE ATAS
      ============================================ */
   function initTombolKeAtas() {
     const btn = document.getElementById('keAtas');
     if (!btn) return;
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 400) {
         btn.classList.add('tampil');
       } else {
         btn.classList.remove('tampil');
@@ -326,7 +341,7 @@
   }
 
   /* ============================================
-     8. SHARE WHATSAPP
+     9. SHARE WHATSAPP
      ============================================ */
   function initShareWA() {
     const btn = document.getElementById('shareWA');
@@ -341,12 +356,12 @@
         'Serat ulem lengkap: ' + window.location.href
       );
       
-      window.open('https://wa.me/?text=' + pesan, '_blank');
+      window.open('https://api.whatsapp.com/send?text=' + pesan, '_blank');
     });
   }
 
   /* ============================================
-     9. SMOOTH SCROLL
+     10. SMOOTH SCROLL
      ============================================ */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -364,7 +379,7 @@
   }
 
   /* ============================================
-     UTILITIES
+     UTILITIES / HELPER
      ============================================ */
   function escapeHtml(text) {
     const div = document.createElement('div');
@@ -399,6 +414,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initMusik();
     initBukaUndangan();
+    initModalGaleri();
     initFormUcapan();
     initSalinRekening();
     initScrollReveal();
@@ -407,7 +423,8 @@
     initShareWA();
     initSmoothScroll();
     
-    console.log('✅ Undangan Pernikahan Adat Jawa siap!');
+    console.log('✅ Undangan Pernikahan Adat Jawa v4.0 siap!');
   });
 
 })();
+           
